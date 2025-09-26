@@ -28,6 +28,7 @@ club social y deportivo unidos por el deporte
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
 		<!-- custom -->
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		
 
 	</head>
 	<body data-spy="scro	ll" data-offset="50" data-target=".navbar-collapse">
@@ -56,6 +57,7 @@ club social y deportivo unidos por el deporte
 				</div>
 			</div>
 		</div>
+    
 		<!-- end navigation -->
 
 		<!-- start home -->
@@ -71,7 +73,7 @@ club social y deportivo unidos por el deporte
 					      <h2 class="wow fadeInDown" data-wow-delay="2000">
 							<span>impulsando el deporte</span>
 						</h2>
-						<a href="#service" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">inscribite</a>	
+						<a href="{{ url_for('reg') }}" class="smoothScroll btn btn-default wow fadeInDown" data-wow-delay="2000">inscribite</a>	
 					    </div>
 				  	</div>
 		        </li>
