@@ -17,21 +17,35 @@ club social y deportivo unidos por el deporte
 		<meta name="description" content="">
 
 		<!-- animate -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css', external=true) }}">
 		<!-- bootstrap -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css', external=true) }}">
 		<!-- magnific pop up -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css', external=true) }}">
 		<!-- font-awesome -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css', external=true) }}">
 		<!-- google font -->
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
 		<!-- custom -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-		
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', external=true) }}">
+
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+		<style>
+			.titulo-mapa {
+				color: #e013e7;
+				text-align: center;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				}   
+			#mimap, #mimaplargo {
+				height: 400px;
+				width: 100%;
+				margin-bottom: 40px;
+			}
+		</style>
 
 	</head>
-	<body data-spy="scro	ll" data-offset="50" data-target=".navbar-collapse">
+	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
 		<!-- start navigation -->
 		<div class="navbar navbar-fixed-top navbar-default" role="navigation">
@@ -43,7 +57,7 @@ club social y deportivo unidos por el deporte
 						<span class="icon icon-bar"></span>
 					</button>
 					<a href="{{ url_for('home') }}" class="navbar-brand">
-					<img src="{{ url_for('static', filename='images/logo.png') }}" class="img-responsive logo-chico"  alt="logo">
+					<img src="{{ url_for('static', filename='images/logo.png', external=true) }}" class="img-responsive logo-chico"  alt="logo">
 					</a>
 				</div>
 				<div class="collapse navbar-collapse">
@@ -66,7 +80,7 @@ club social y deportivo unidos por el deporte
 		    <div class="flexslider">
 		      <ul class="slides">
 		        <li>
-		        	<img src="{{ url_for('static', filename='images/ciclismo.png') }}" alt="Slide 1">
+		        	<img src="{{ url_for('static', filename='images/ciclismo.png', external=true) }}" alt="Slide 1">
 		        	<div class="slider-caption">
 					    <div class="templatemo_homewrapper">
 					      <h1 class="wow fadeInDown" data-wow-delay="2000">ciclismo MTB rural</h1>
@@ -78,7 +92,7 @@ club social y deportivo unidos por el deporte
 				  	</div>
 		        </li>
 		        <li>
-		        	<img src="{{ url_for('static', filename='images/ciclismo2.png') }}" alt="Slide 2">
+		        	<img src="{{ url_for('static', filename='images/ciclismo2.png', external=true) }}" alt="Slide 2">
 		        	<div class="slider-caption">
 					    <div class="templatemo_homewrapper">
 					      <h1 class="wow fadeInDown" data-wow-delay="2000">Club  Social  y  Deportivo  Unidos  por el Deporte</h1>
@@ -107,7 +121,7 @@ club social y deportivo unidos por el deporte
 							</div>
 							<div class="media-body wow fadeIn">
 								<h3 class="media-heading">Ubicacion</h3>
-								<p><a href="#map">Tandil, paseo de los Españoles </a></p>
+								<p><a href="#mimap">Tandil, paseo de los Españoles </a></p>
 							</div>
 						</div>
 					</div>
@@ -118,7 +132,7 @@ club social y deportivo unidos por el deporte
 							</div>
 							<div class="media-body wow fadeIn">
 								<h3 class="media-heading">Datos Al Kit De Carrera</h3>
-								<a href="{{ url_for('static', filename='docs/kit.pdf') }}">Kit De ciclismo</a>
+								<a href="{{ url_for('static', filename='docs/kit.pdf', external=true) }}">Kit De ciclismo</a>
 							</div>
 						</div>
 					</div>
@@ -140,7 +154,7 @@ club social y deportivo unidos por el deporte
 							</div>
 							<div class="media-body wow fadeIn" data-wow-delay="0.6s">
 								<h3 class="media-heading">Deslinde</h3>
-								<a href="{{ url_for('static', filename='docs/reglamento.pdf') }}">Visualizar Deslinde</a>
+								<a href="{{ url_for('static', filename='docs/reglamento.pdf', external=true) }}">Visualizar Deslinde</a>
 							</div>
 						</div>
 					</div>
@@ -151,7 +165,7 @@ club social y deportivo unidos por el deporte
 							</div>
 							<div class="media-body wow fadeIn" data-wow-delay="0.6s">
 								<h3 class="media-heading">reglamento</h3>
-								<a href="{{ url_for('static', filename='docs/reglamento.pdf') }}">Visualizar Reglamento</a>
+								<a href="{{ url_for('static', filename='docs/reglamento.pdf', external=true) }}">Visualizar Reglamento</a>
 							</div>
 						</div>
 					</div>
@@ -217,7 +231,7 @@ club social y deportivo unidos por el deporte
 						<h2 class="wow bounce">Conoce A Los Patrocinadores!!</h2>
 					</div>
 					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-						<img src="{{ url_for('static', filename='images/adidas.png') }}" class="img-responsive" alt="team img">
+						<img src="{{ url_for('static', filename='images/adidas.png', external=true) }}" class="img-responsive" alt="team img">
 						<h4>Patrocinador Principal</h4>
 						<h3>{{ info.Auspiciantes[1] }}</h3>
 						
@@ -229,7 +243,7 @@ club social y deportivo unidos por el deporte
        					 </ul>
 					</div>
 					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.6s">
-						<img src="{{  url_for('static', filename='images/gatorade.png')  }}"class="img-responsive" alt="team img">
+						<img src="{{  url_for('static', filename='images/gatorade.png', external=true)  }}"class="img-responsive" alt="team img">
 						<h4>Hidratacion Oficial</h4>
 						<h3>{{ info.Auspiciantes[0] }}</h3>
 						
@@ -241,7 +255,7 @@ club social y deportivo unidos por el deporte
        					 </ul>
 					</div>
 					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.9s">
-						<img src="{{  url_for('static', filename='images/cruz.png')  }} " class="img-responsive" alt="team img">
+						<img src="{{  url_for('static', filename='images/cruz.png', external=true)  }} " class="img-responsive" alt="team img">
 						<h4>Patrocinador MEDICO</h4>
 						<h3>{{ info.Auspiciantes[2] }}</h3>
 						
@@ -291,7 +305,7 @@ club social y deportivo unidos por el deporte
 
 
 		<!-- start portfolio -->
-		 
+		<div class=" contenedor-principal">
 		<div id="team">
 			<div class="container"><h2>Ficha Tecnica</h2>
 				<div class="row">
@@ -331,73 +345,14 @@ club social y deportivo unidos por el deporte
 						
 						<li><strong>Medalla para todos los finalistas</strong></li>
 						</ul></div>
-										</div>
-									</div>
-								</div>
-								</div>
-									
-									
-									
-									
-								</div>
-               				 				</div>
-               				 			</div>
-
-               				 			<div class="iso-box wallpaper col-md-4 col-sm-6 col-xs-12">
-               				 				<div class="portfolio-thumb">
-               				 					<img src="images/portfolio-img3.jpg" class="fluid-img" alt="portfolio img">
-               				 						<div class="portfolio-overlay">
-               				 							<a href="images/portfolio-img3.jpg" class="fa fa-search portfolio-popup"></a>
-               				 							<a href="#" class="fa fa-link"></a>
-               				 							<h4>Project title</h4>
-               				 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-               				 						</div>
-               				 				</div>
-               				 			</div>
-
-               				 			<div class="iso-box graphic col-md-4 col-sm-6 col-xs-12">
-               				 				<div class="portfolio-thumb">
-               				 					<img src="images/portfolio-img4.jpg" class="fluid-img" alt="portfolio img">
-               				 						<div class="portfolio-overlay">
-               				 							<a href="images/portfolio-img4.jpg" class="fa fa-search portfolio-popup"></a>
-               				 							<a href="#" class="fa fa-link"></a>
-               				 							<h4>Project title</h4>
-               				 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-               				 						</div>
-               				 				</div>
-               				 			</div>
-
-               				 			<div class="iso-box wallpaper col-md-4 col-sm-6 col-xs-12">
-               				 				<div class="portfolio-thumb">
-               				 					<img src="images/portfolio-img5.jpg" class="fluid-img" alt="portfolio img">
-               				 						<div class="portfolio-overlay">
-               				 							<a href="images/portfolio-img5.jpg" class="fa fa-search portfolio-popup"></a>
-               				 							<a href="#" class="fa fa-link"></a>
-               				 							<h4>Project title</h4>
-               				 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-               				 						</div>
-               				 				</div>
-               				 			</div>
-
-               				 			<div class="iso-box graphic photoshop col-md-4 col-sm-6 col-xs-12">
-               				 				<div class="portfolio-thumb">
-               				 					<img src="images/portfolio-img6.jpg" class="fluid-img" alt="portfolio img">
-               				 						<div class="portfolio-overlay">
-               				 							<a href="images/portfolio-img6.jpg" class="fa fa-search portfolio-popup"></a>
-               				 							<a href="#" class="fa fa-link"></a>
-               				 							<h4>Project title</h4>
-               				 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-               				 						</div>
-               				 				</div>
-               				 			</div>
-
-               				 		</div>
-               				 	</div>
-
-							</div>
+										
+						
+						 	
 					</div>
 				</div>
-			</div>
+			</div>	
+		</div> 
+		
 		</div>
 		<!-- end portfolio -->
 
@@ -429,11 +384,16 @@ club social y deportivo unidos por el deporte
 		<!-- end contact -->
 		
 		<!-- start google map -->
-		<div class="google_map">
-				
-			<div id="map" style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=tandil,%20paseo%20de%20los%20espa%C3%B1oles+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.mapsdirections.info/it/calcola-la-popolazione-su-una-mappa/">popolazione per regione Italia mappa</a></iframe></div>
-    			
-		</div>
+		<section id="mapas" class="text-center">
+			<h1 class="titulo-mapa">Mapa de la carrera Corta</h1>
+			<div id="mimap"></div>
+
+			<h1 class="titulo-mapa">Mapa de la carrera larga</h1>
+			<div id="mimaplargo"></div>
+		</section>
+		
+			
+		
 		<!-- end google map -->
 
 		<!-- start footer -->
@@ -442,7 +402,7 @@ club social y deportivo unidos por el deporte
 				<div class="row">
 					<div class="col-md-8 col-sm-7">
 						<p>Copyright &copy; 2017 Solution Company</p>
-						<small>Designed by <a rel="nofollow" href="http://www.tooplate.com" target="_parent">Tooplate</a></small>
+						<small>Designed by FIUBA<a rel="nofollow" href="http://www.tooplate.com" target="_parent">Tooplate</a></small>
 					</div>
 					<div class="col-md-4 col-sm-5">
 						<ul class="social-icon">
@@ -459,25 +419,47 @@ club social y deportivo unidos por el deporte
 		</footer>
 		<!-- end footer -->
 
-
 		<!-- jQuery -->
-		<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+		
+		
+		<script src="{{ url_for('static', filename='js/jquery.js', external=true) }}"></script>
 		<!-- bootstrap -->
-		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bootstrap.min.js', external=true) }}"></script>
 		<!-- isotope -->
-		<script src="{{ url_for('static', filename='js/isotope.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/isotope.js', external=true) }}"></script>
 		<!-- images loaded -->
-   		<script src="{{ url_for('static', filename='js/imagesloaded.min.js') }}"></script>
+   		<script src="{{ url_for('static', filename='js/imagesloaded.min.js', external=true) }}"></script>
    		<!-- wow -->
-		<script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/wow.min.js', external=true) }}"></script>
 		<!-- smoothScroll -->
-		<script src="{{ url_for('static', filename='js/smoothscroll.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/smoothscroll.js', external=true) }}"></script>
 		<!-- jquery flexslider -->
-		<script src="{{ url_for('static', filename='js/jquery.flexslider.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.flexslider.js', external=true) }}"></script>
 		<!-- Magnific Pop up -->
-		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js', external=true) }}"></script>
 		<!-- custom -->
-		<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/custom.js', external=true) }}"></script>
 
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+		<script>
+			let map = L.map('mimap').setView([-37.3267, -59.1333], 13);
+			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; OpenStreetMap contributors'
+			}).addTo(map);
+			L.marker([-37.328, -59.136]).addTo(map).bindPopup('Salida (Plaza Independencia)');
+			L.marker([-37.310, -59.123]).addTo(map).bindPopup('Llegada (Sierra del Tigre)');
+			L.marker([-37.322, -59.130]).addTo(map).bindPopup('Puesto de Hidratación 1');
+			L.marker([-37.318, -59.125]).addTo(map).bindPopup('Puesto de Hidratación 2');
+
+			let maplarg = L.map('mimaplargo').setView([-37.3267, -59.1333], 13);
+			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; OpenStreetMap contributors'
+			}).addTo(maplarg);
+			L.marker([-37.3219, -59.1332]).addTo(maplarg).bindPopup('Salida (Plaza Independencia)');
+			L.marker([-37.3308, -59.1421]).addTo(maplarg).bindPopup('Puesto 1: Parque Independencia (entrada)');
+			L.marker([-37.3390, -59.1503]).addTo(maplarg).bindPopup('Puesto 2: Lago del Fuerte');
+			L.marker([-37.3485, -59.1579]).addTo(maplarg).bindPopup('Puesto 3: Camino a Sierra del Tigre (Ruta Provincial 226)');
+			L.marker([-37.3644, -59.1562]).addTo(maplarg).bindPopup('Llegada: Reserva Natural Sierra del Tigre');
+		</script>
 	</body>
-</html
+</html>
